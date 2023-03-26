@@ -18,12 +18,22 @@ const promise = new Promise((resolve, reject) => {
 
 promise
   .then(numbersArray => {
-    const filteredArray = numbersArray.filter(num => num % 2 === 0);
-    return filteredArray;
+	var arr1 = numbersArray.filter(num => num % 2 === 0);
+   setTimeout((numbersArray)=>{
+	
+	document.getElementById('output').innerText = arr1;
+   },1000)
+	
+    
   })
+promise
   .then(filteredArray => {
-    const multipliedArray = filteredArray.map(num => num * 2);
-    return multipliedArray;
+    const arr2 = filteredArray.map(num => num * 2);
+	setTimeout((filteredArray)=>{
+	
+	document.getElementById('output').innerText = arr2;
+   },2000)
+    
   })
  .then(finalArray => {
 	 document.getElementById('output').innerText = eval(finalArray.join("+"))
