@@ -8,6 +8,29 @@
   <body>
     <!-- do not change this code -->
     <div id="output"></div>
-    <script type="text/javascript" src="./script.js"></script>
+    <script>
+		const numbersArray = [1, 2, 3, 4];
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(numbersArray);
+  }, 3000);
+});
+
+promise
+  .then(numbersArray => {
+    const filteredArray = numbersArray.filter(num => num % 2 === 0);
+    return filteredArray;
+  })
+  .then(filteredArray => {
+    const multipliedArray = filteredArray.map(num => num * 2);
+    return multipliedArray;
+  })
+  .then(finalArray => {
+    const outputDiv = document.getElementById('output');
+    outputDiv.textContent = finalArray.join(', ');
+  })
+  .catch(error => {
+    console.error(error);
+  });</script>
   </body>
 </html>
