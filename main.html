@@ -25,10 +25,9 @@ promise
     const multipliedArray = filteredArray.map(num => num * 2);
     return multipliedArray;
   })
-  .then(finalArray => {
-    const outputDiv = document.getElementById('output');
-    outputDiv.textContent = finalArray.join(', ');
-  })
+ .then(finalArray => {
+	 document.getElementById('output').innerText = eval(finalArray.join("+"))
+ })
   .catch(error => {
     console.error(error);
   });</script>
